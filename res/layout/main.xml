@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:background="@android:color/transparent"
+    android:scrollbarStyle="insideOverlay"
+    android:scrollbars="vertical" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:gravity="center" >
+            <TextView
+                android:id="@+id/restaurant_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/restaurant_name"
+                style="@style/text"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+                <Button
+                    android:id="@+id/ButtonViewOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="View Your Order" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                 >
+                    <Button
+                    android:id="@+id/ButtonMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="Menu" />
+                </RelativeLayout>
+        </TableRow>
+    </TableLayout>
+
+</ScrollView>
