@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Resto</string>
+    <string name="app_name">resto</string>
     <string name="restaurant_name">Legends of Rock</string>
     <string name="menu">Menu</string>
     <string name="enter_rest_id_message">Enter Restaurant ID</string>
