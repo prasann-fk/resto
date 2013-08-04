@@ -10,17 +10,9 @@ public class RestoDbHelper extends DatabaseInitializer{
 
     public RestoDbHelper(Context context){ super(context); }
 
-    public void beginTransaction(){
-        db.beginTransaction();
-    }
-
-    public void endTransaction(){
-        db.endTransaction();
-    }
-
     public String getRestaurantName()
     {
-        String[] projection = { RestoContract.Restaurant.COLUMN_NAME_RESTAURANT_NAME };
+        String[] projection = { RestoContract.Restaurant.COLUMN_NAME_NAME};
         Cursor c = db.query( RestoContract.Restaurant.TABLE_NAME, projection, null, null, null, null, null);
         int count = c.getCount();
         if(count <= 0){
@@ -28,7 +20,7 @@ public class RestoDbHelper extends DatabaseInitializer{
         }
         else{
             c.moveToFirst();
-            return c.getString(c.getColumnIndexOrThrow(RestoContract.Restaurant.COLUMN_NAME_RESTAURANT_NAME));
+            return c.getString(c.getColumnIndexOrThrow(RestoContract.Restaurant.COLUMN_NAME_NAME));
         }
     }
 
@@ -36,12 +28,22 @@ public class RestoDbHelper extends DatabaseInitializer{
     {
         ContentValues values = new ContentValues();
         values.put(RestoContract.Restaurant.COLUMN_NAME_RESTAURANT_ID, 1);
-        values.put(RestoContract.Restaurant.COLUMN_NAME_RESTAURANT_NAME, name);
-        long newRowId = db.insert( RestoContract.Restaurant.TABLE_NAME, "null", values);
+        values.put(RestoContract.Restaurant.COLUMN_NAME_NAME, name);
+        db.insert( RestoContract.Restaurant.TABLE_NAME, "null", values);
     }
 
     public void deleteRestaurantName(){
         db.delete(RestoContract.Restaurant.TABLE_NAME, null, null);
+    }
+
+    public void initializeRestaurant(String data){
+        try{
+        db.beginTransaction();
+        setRestaurantName(data);
+        db.setTransactionSuccessful();
+        }finally {
+            db.endTransaction();
+        }
     }
 
 }

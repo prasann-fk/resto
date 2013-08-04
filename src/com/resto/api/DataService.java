@@ -16,15 +16,13 @@ public class DataService {
 
     public void initializeDatabase(String restaurantId) throws Exception{
         try {
-        HashMap<Boolean, String> hm = new LongIO().execute("restaurants/" + restaurantId).get();
+        HashMap<Boolean, String> hm = new LongIO().execute("restaurants/" + restaurantId + "/initialize").get();
         Iterator iterator = hm.entrySet().iterator();
         Map.Entry mEntry = (Map.Entry) iterator.next();
 		Boolean success = (Boolean) mEntry.getKey();
         String data = (String) mEntry.getValue();
         if(success){
-            dbHelper.beginTransaction();
-            dbHelper.setRestaurantName(data);
-            dbHelper.endTransaction();
+            dbHelper.initializeRestaurant(data);
         }
          else
             throw new Exception(data);
