@@ -25,6 +25,6 @@ public class MainActivity extends Activity
                 startActivity(new Intent(MainActivity.this, MenuActivity.class));
             }
         });
-        dbHelper.deleteRestaurantName();
+        //dbHelper.deleteRestaurantName();
     }
 }

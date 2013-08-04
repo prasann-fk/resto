@@ -28,6 +28,16 @@
                 android:gravity="center"
                 android:layout_centerHorizontal="true"
                 />
+            <TextView
+                android:id="@+id/restaurant_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/restaurant_desc"
+                style="@style/text"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                />
         </TableRow>
 
         <TableRow

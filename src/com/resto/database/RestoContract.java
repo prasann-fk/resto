@@ -4,7 +4,8 @@ import android.provider.BaseColumns;
 
 public class RestoContract {
 
-    public RestoContract() {}
+    public RestoContract() {
+    }
 
     public static abstract class Restaurant implements BaseColumns {
         public static final String TABLE_NAME = "Restaurant";

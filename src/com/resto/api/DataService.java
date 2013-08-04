@@ -22,7 +22,7 @@ public class DataService {
 		Boolean success = (Boolean) mEntry.getKey();
         String data = (String) mEntry.getValue();
         if(success){
-            dbHelper.initializeRestaurant(data);
+            dbHelper.initializeResto(data);
         }
          else
             throw new Exception(data);

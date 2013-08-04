@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">resto</string>
     <string name="restaurant_name">Legends of Rock</string>
+    <string name="restaurant_desc">Description</string>
     <string name="menu">Menu</string>
     <string name="enter_rest_id_message">Enter Restaurant ID</string>
     <string name="button_submit">Submit</string>
