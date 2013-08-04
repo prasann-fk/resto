@@ -10,6 +10,14 @@ public class RestoDbHelper extends DatabaseInitializer{
 
     public RestoDbHelper(Context context){ super(context); }
 
+    public void beginTransaction(){
+        db.beginTransaction();
+    }
+
+    public void endTransaction(){
+        db.endTransaction();
+    }
+
     public String getRestaurantName()
     {
         String[] projection = { RestoContract.Restaurant.COLUMN_NAME_RESTAURANT_NAME };

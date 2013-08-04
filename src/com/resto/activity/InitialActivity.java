@@ -24,7 +24,11 @@ public class InitialActivity extends BaseActivity {
     View.OnClickListener onClickListener = new View.OnClickListener() {
     public void onClick(View v) {
         EditText e = (EditText) findViewById(R.id.rest_id_input);
-        int restaurantId = Integer.parseInt(e.getText().toString());
+        String restaurantId = e.getText().toString();
+        if(restaurantId.length() == 0){
+            e.setError("Please input Valid text");
+            return;
+        }
         try{
             dataService.initializeDatabase(restaurantId);
             startActivity(new Intent(InitialActivity.this, MainActivity.class));
