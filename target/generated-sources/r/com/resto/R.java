@@ -37,6 +37,7 @@ public final class R {
         public static final int button_submit=0x7f050005;
         public static final int enter_rest_id_message=0x7f050004;
         public static final int menu=0x7f050003;
+        public static final int open_helper_classname=0x7f050006;
         public static final int restaurant_desc=0x7f050002;
         public static final int restaurant_name=0x7f050001;
     }

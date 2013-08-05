@@ -6,4 +6,5 @@
     <string name="menu">Menu</string>
     <string name="enter_rest_id_message">Enter Restaurant ID</string>
     <string name="button_submit">Submit</string>
+    <string name="open_helper_classname">com.resto.database.DatabaseHelper</string>
 </resources>

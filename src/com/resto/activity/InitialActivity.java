@@ -6,14 +6,15 @@ import android.view.View;
 import android.widget.*;
 import com.resto.R;
 import android.app.Dialog;
+import com.resto.database.Restaurant;
 
 public class InitialActivity extends BaseActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String rest_name = dbHelper.getRestaurantName();
-        if (rest_name == null) {
+        Restaurant restaurant = getHelper().getRestaurant();
+        if (restaurant == null) {
             setContentView(R.layout.initial);
             findViewById(R.id.rest_id_submit).setOnClickListener(onClickListener);
         } else {
