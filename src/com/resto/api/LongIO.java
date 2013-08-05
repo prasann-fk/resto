@@ -18,7 +18,7 @@ import android.os.AsyncTask;
 
 public class LongIO extends AsyncTask<String, Void, HashMap<Boolean, String>> {
 
-    public static final String HOST_URL = "http://10.0.2.2:3000/";
+    public static final String HOST_URL = "http://192.168.0.103:3000/";
     public static final String CLASS_NAME = LongIO.class.toString();
 
     protected String getASCIIContentFromEntity(HttpEntity entity) throws IllegalStateException, IOException {
