@@ -4,11 +4,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+import com.octo.android.robospice.persistence.DurationInMillis;
+import com.octo.android.robospice.persistence.exception.SpiceException;
+import com.octo.android.robospice.request.listener.RequestListener;
 import com.resto.R;
-import android.app.Dialog;
+import com.resto.api.request.RestaurantRequest;
+import com.resto.api.request.MenuRequest;
+import com.resto.database.Menus;
 import com.resto.database.Restaurant;
+import android.util.Log;
 
 public class InitialActivity extends BaseActivity {
+
+    private static final String RESTAURANT_JSON_CACHE_KEY = "restaurant_json";
+    private static final String MENU_JSON_CACHE_KEY = "menu_json";
+    public static final String CLASS_NAME = InitialActivity.class.toString();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,26 +41,52 @@ public class InitialActivity extends BaseActivity {
             return;
         }
         try{
-            dataService.initializeDatabase(restaurantId);
-            startActivity(new Intent(InitialActivity.this, MainActivity.class));
+            spiceManager.execute(new RestaurantRequest(restaurantId, "aa"), RESTAURANT_JSON_CACHE_KEY, DurationInMillis.ALWAYS_EXPIRED, new RestaurantRequestListener());
+            //startActivity(new Intent(InitialActivity.this, MainActivity.class));
         }catch(Exception e1){
-            handleException(e1);
+            handleDatabaseInitializationException(e1);
         }
       }
     };
 
-    public void handleException(Exception e){
-        final Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.error);
-        dialog.setTitle("ERROR");
-        TextView text = (TextView) dialog.findViewById(R.id.errorText);
-        text.setText(e.getLocalizedMessage());
-        dialog.findViewById(R.id.dialogButtonOK).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-        dialog.show();
+    public void handleDatabaseInitializationException(Exception e){
+        Log.e(CLASS_NAME, "Error occurred while initializing database" + e.getLocalizedMessage());
+        e.printStackTrace();
+        getHelper().clearData();
+        Toast.makeText( InitialActivity.this, "failure", Toast.LENGTH_SHORT ).show();
+    }
 
+    public final class RestaurantRequestListener implements RequestListener< Restaurant > {
+
+        public void onRequestFailure( SpiceException spiceException ) {
+           Toast.makeText( InitialActivity.this, "failure", Toast.LENGTH_SHORT ).show();
+        }
+
+        public void onRequestSuccess( Restaurant restaurant ) {
+            try{
+                restaurant = getHelper().createRestaurant(restaurant);
+            }catch (Exception e){
+                handleDatabaseInitializationException(e);
+                return;
+            }
+            spiceManager.execute(new MenuRequest(restaurant), MENU_JSON_CACHE_KEY, DurationInMillis.ALWAYS_EXPIRED, new MenuRequestListener());
+        }
+    }
+
+    public final class MenuRequestListener implements RequestListener<Menus> {
+        public void onRequestFailure( SpiceException spiceException ) {
+           Toast.makeText( InitialActivity.this, "failure", Toast.LENGTH_SHORT ).show();
+        }
+
+        public void onRequestSuccess( Menus menus) {
+            try{
+                getHelper().createMenu(getHelper().getRestaurant(), menus.getMenus());
+                Toast.makeText( InitialActivity.this, "success", Toast.LENGTH_SHORT ).show();
+                startActivity(new Intent(InitialActivity.this, MainActivity.class));
+            }catch (Exception e){
+                handleDatabaseInitializationException(e);
+                return;
+            }
+        }
     }
 }

@@ -23,6 +23,8 @@ public class MainActivity extends BaseActivity
                 startActivity(new Intent(MainActivity.this, MenuActivity.class));
             }
         });
-        //dbHelper.deleteRestaurantName();
+
+        //TODO: remove this line: it is there because i am testing initial request
+        getHelper().clearData();
     }
 }

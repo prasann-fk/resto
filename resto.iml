@@ -33,6 +33,7 @@
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/maven-archiver" />
       <excludeFolder url="file://$MODULE_DIR$/target/maven-status" />
+      <excludeFolder url="file://$MODULE_DIR$/target/test-classes" />
     </content>
     <orderEntry type="jdk" jdkName="Android 4.2.2 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -47,6 +48,16 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.json:json:20080701" level="project" />
     <orderEntry type="library" name="Maven: com.j256.ormlite:ormlite-core:4.46" level="project" />
     <orderEntry type="library" name="Maven: com.j256.ormlite:ormlite-android:4.46" level="project" />
+    <orderEntry type="library" name="Maven: com.octo.android.robospice:robospice-ormlite:1.4.5" level="project" />
+    <orderEntry type="library" name="Maven: com.octo.android.robospice:robospice-cache:1.4.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:1.3.2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.android:support-v4:r7" level="project" />
+    <orderEntry type="library" name="Maven: com.octo.android.robospice:robospice-spring-android:1.4.5" level="project" />
+    <orderEntry type="library" name="Maven: com.octo.android.robospice:robospice:1.4.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.android:spring-android-rest-template:1.0.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.android:spring-android-core:1.0.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.2.4" level="project" />
   </component>
 </module>
 
