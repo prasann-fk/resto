@@ -15,6 +15,6 @@ public class MenuRequest extends SpringAndroidSpiceRequest<Menus> {
 
     @Override
     public Menus loadDataFromNetwork() throws Exception {
-        return getRestTemplate().getForObject( "http://192.168.0.103:3000/restaurants/" + restaurant.id + "/menu", Menus.class );
+        return getRestTemplate().getForObject( "http://192.168.0.102:3000/restaurants/" + restaurant.id + "/menu", Menus.class );
     }
 }

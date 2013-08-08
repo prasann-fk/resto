@@ -14,7 +14,7 @@ public class HomeActivity extends BaseActivity
     {
         super.onCreate(savedInstanceState);
         Restaurant restaurant = getHelper().getRestaurant();
-        setContentView(R.layout.main);
+        setContentView(R.layout.home);
         TextView v = (TextView)findViewById(R.id.restaurant_name);
         v.setText(restaurant.name);
         Button btnClickMenu =(Button)findViewById(R.id.ButtonMenu);
@@ -24,7 +24,7 @@ public class HomeActivity extends BaseActivity
             }
         });
 
-        //TODO: remove this line: it is there because i am testing initial request
+        //TODO: remove this line: it is there because i am testing main request
         getHelper().clearData();
     }
 }
