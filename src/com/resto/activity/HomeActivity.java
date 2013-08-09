@@ -16,7 +16,9 @@ public class HomeActivity extends BaseActivity
         Restaurant restaurant = getHelper().getRestaurant();
         setContentView(R.layout.home);
         TextView v = (TextView)findViewById(R.id.restaurant_name);
+        TextView v1 = (TextView)findViewById(R.id.restaurant_description);
         v.setText(restaurant.name);
+        v1.setText(restaurant.description);
         Button btnClickMenu =(Button)findViewById(R.id.ButtonMenu);
         btnClickMenu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

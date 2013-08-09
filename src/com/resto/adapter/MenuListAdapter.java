@@ -38,12 +38,6 @@ public class MenuListAdapter extends ArrayAdapter<MenuItem> {
             holder.txtTitle = (TextView) convertView.findViewById(R.id.name);
             holder.imageView = (ImageView) convertView.findViewById(R.id.image);
             holder.addToCartButton = (Button) convertView.findViewById(R.id.add_to_cart_button);
-            holder.addToCartButton.setTag(position);
-            holder.addToCartButton.setOnClickListener( new View.OnClickListener() {
-                public void onClick(View view) {
-                    Toast.makeText(view.getContext(), "Left Accessory "+view.getTag(), Toast.LENGTH_SHORT).show();
-                }
-            });
             convertView.setTag(holder);
         } else
             holder = (ViewHolder) convertView.getTag();
@@ -51,6 +45,13 @@ public class MenuListAdapter extends ArrayAdapter<MenuItem> {
         holder.txtDesc.setText(menuItem.getDescription());
         holder.txtTitle.setText(menuItem.getName());
         holder.imageView.setImageDrawable(menuItem.getImageDrawable(context));
+        holder.addToCartButton.setTag(menuItem);
+
+        holder.addToCartButton.setOnClickListener( new View.OnClickListener() {
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Left Accessory "+view.getTag(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return convertView;
     }

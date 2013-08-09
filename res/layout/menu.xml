@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent">
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-        <ListView
+    <RelativeLayout android:id="@+id/footer" android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:layout_alignParentBottom="true" style="@android:style/ButtonBar">
+    </RelativeLayout>
+
+    <ListView
             android:id="@+id/menu_list"
+            android:layout_above="@id/footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-         />
-    </LinearLayout>
-
-    <LinearLayout android:id="@+id/footer" android:layout_width="fill_parent"
-                  android:layout_height="wrap_content" android:orientation="horizontal"
-                  android:layout_alignParentBottom="true" style="@android:style/ButtonBar">
-    </LinearLayout>
+            />
 
 </RelativeLayout>

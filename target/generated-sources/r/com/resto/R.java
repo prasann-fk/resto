@@ -24,9 +24,9 @@ public final class R {
         public static final int description=0x7f07000d;
         public static final int dialogButtonOK=0x7f070001;
         public static final int errorText=0x7f070000;
-        public static final int footer=0x7f07000a;
+        public static final int footer=0x7f070009;
         public static final int image=0x7f07000b;
-        public static final int menu_list=0x7f070009;
+        public static final int menu_list=0x7f07000a;
         public static final int name=0x7f07000c;
         public static final int price=0x7f07000e;
         public static final int rest_id_input=0x7f070006;
