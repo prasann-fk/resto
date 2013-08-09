@@ -5,7 +5,7 @@ import android.os.Bundle;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.octo.android.robospice.GsonSpringAndroidSpiceService;
 import com.octo.android.robospice.SpiceManager;
-import com.resto.database.RestoDbHelper;
+import com.resto.models.RestoDbHelper;
 
 
 public class BaseActivity extends Activity {

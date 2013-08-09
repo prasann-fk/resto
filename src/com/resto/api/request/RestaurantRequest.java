@@ -1,7 +1,7 @@
 package com.resto.api.request;
 
 import com.octo.android.robospice.request.springandroid.SpringAndroidSpiceRequest;
-import com.resto.database.Restaurant;
+import com.resto.models.Restaurant;
 
 public class RestaurantRequest extends SpringAndroidSpiceRequest<Restaurant> {
 

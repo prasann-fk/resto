@@ -10,8 +10,8 @@ import com.octo.android.robospice.request.listener.RequestListener;
 import com.resto.R;
 import com.resto.api.request.RestaurantRequest;
 import com.resto.api.request.MenuRequest;
-import com.resto.database.Menus;
-import com.resto.database.Restaurant;
+import com.resto.models.Menu;
+import com.resto.models.Restaurant;
 import android.util.Log;
 
 public class MainActivity extends BaseActivity {
@@ -81,14 +81,14 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    public final class MenuRequestListener implements RequestListener<Menus> {
+    public final class MenuRequestListener implements RequestListener<Menu> {
         public void onRequestFailure( SpiceException spiceException ) {
-           Toast.makeText( MainActivity.this, "failure", Toast.LENGTH_SHORT ).show();
+           handleDatabaseInitializationException(spiceException);
         }
 
-        public void onRequestSuccess( Menus menus) {
+        public void onRequestSuccess( Menu menu) {
             try{
-                getHelper().createMenu(getHelper().getRestaurant(), menus.getMenus());
+                getHelper().createMenu(getHelper().getRestaurant(), menu.getMenu());
                 Toast.makeText( MainActivity.this, "success", Toast.LENGTH_SHORT ).show();
                 startActivity(new Intent(MainActivity.this, HomeActivity.class));
             }catch (Exception e){

@@ -5,7 +5,7 @@ import android.widget.*;
 import android.view.*;
 import android.content.*;
 import com.resto.R;
-import com.resto.database.Restaurant;
+import com.resto.models.Restaurant;
 
 public class HomeActivity extends BaseActivity
 {
@@ -23,8 +23,5 @@ public class HomeActivity extends BaseActivity
                 startActivity(new Intent(HomeActivity.this, MenuActivity.class));
             }
         });
-
-        //TODO: remove this line: it is there because i am testing main request
-        getHelper().clearData();
     }
 }
