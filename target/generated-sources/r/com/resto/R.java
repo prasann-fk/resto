@@ -11,24 +11,62 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int blue=0x7f040000;
+        public static final int blue_background=0x7f040003;
+        public static final int button_color_dark=0x7f04000a;
+        public static final int button_color_disabled=0x7f04000b;
+        public static final int button_color_light=0x7f040009;
+        public static final int button_default_border=0x7f04000c;
+        public static final int button_disabled_focused_border=0x7f04000e;
+        public static final int button_focused_border=0x7f04000d;
+        public static final int color_background=0x7f040002;
+        public static final int color_foreground=0x7f040001;
+        public static final int color_foreground_inverse=0x7f040005;
+        public static final int green=0x7f040000;
+        public static final int list_item_color_dark=0x7f040016;
+        public static final int list_item_color_disabled=0x7f04001b;
+        public static final int list_item_color_light=0x7f040015;
+        public static final int list_item_pressed_color_dark=0x7f04001a;
+        public static final int list_item_pressed_color_light=0x7f040019;
+        public static final int list_item_selected_color_dark=0x7f040018;
+        public static final int list_item_selected_color_light=0x7f040017;
+        public static final int textfield_color_dark=0x7f040010;
+        public static final int textfield_color_disabled=0x7f040011;
+        public static final int textfield_color_light=0x7f04000f;
+        public static final int textfield_default_border=0x7f040012;
+        public static final int textfield_disabled_focused_border=0x7f040014;
+        public static final int textfield_focused_border=0x7f040013;
+        public static final int title_border=0x7f040008;
+        public static final int title_color_dark=0x7f040007;
+        public static final int title_color_light=0x7f040006;
+        public static final int white_text=0x7f040004;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int icon=0x7f020001;
+        public static final int button_bar_background=0x7f020000;
+        public static final int button_bar_default=0x7f020001;
+        public static final int button_disabled=0x7f020002;
+        public static final int button_disabled_focused=0x7f020003;
+        public static final int button_focused=0x7f020004;
+        public static final int button_pressed=0x7f020005;
+        public static final int epub_icon_sm=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int ic_title_share_sm=0x7f020008;
+        public static final int icon=0x7f020009;
+        public static final int notesicon_low_sm=0x7f02000a;
+        public static final int pdf_icon_sm=0x7f02000b;
     }
     public static final class id {
         public static final int ButtonMenu=0x7f070005;
         public static final int ButtonViewOrder=0x7f070004;
-        public static final int add_to_cart_button=0x7f07000f;
-        public static final int description=0x7f07000d;
+        public static final int add_to_cart_button=0x7f070010;
+        public static final int description=0x7f07000e;
         public static final int dialogButtonOK=0x7f070001;
         public static final int errorText=0x7f070000;
         public static final int footer=0x7f070009;
-        public static final int image=0x7f07000b;
-        public static final int menu_list=0x7f07000a;
-        public static final int name=0x7f07000c;
-        public static final int price=0x7f07000e;
+        public static final int image=0x7f07000c;
+        public static final int menu_list=0x7f07000b;
+        public static final int menu_more_id=0x7f07000a;
+        public static final int name=0x7f07000d;
+        public static final int price=0x7f07000f;
         public static final int rest_id_input=0x7f070006;
         public static final int rest_id_submit=0x7f070008;
         public static final int restaurant_description=0x7f070003;
