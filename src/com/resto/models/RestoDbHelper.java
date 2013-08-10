@@ -2,7 +2,9 @@ package com.resto.models;
 
 import android.content.Context;
 import android.util.Base64;
+import com.j256.ormlite.dao.GenericRawResults;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Collection;
 import java.util.concurrent.Callable;
@@ -22,6 +24,14 @@ public class RestoDbHelper extends DatabaseHelper{
 
     public List<MenuItem> getAllMenuItems(){
         return getMenuRuntimeDao().queryForAll();
+    }
+
+    public List<MenuItem> getMenuItem(String tag){
+        ArrayList<MenuItem> finalList = new ArrayList<MenuItem>();
+        GenericRawResults<MenuItem> list =  getMenuRuntimeDao().queryRaw("select _id from MenuItem where tags like '%" + tag + "%'", getMenuRuntimeDao().getRawRowMapper());
+        for(MenuItem item: list)
+            finalList.add(getMenuRuntimeDao().queryForId(item._id));
+        return finalList;
     }
 
     public void clearData() {

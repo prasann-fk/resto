@@ -2,7 +2,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="fill_parent">
     <RelativeLayout android:background="@color/blue_background" android:id="@+id/footer" android:layout_height="45dp" android:layout_width="fill_parent" android:layout_alignParentTop="true">
-        <Button android:id="@+id/menu_more_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="more" android:drawableRight="@android:drawable/arrow_up_float" android:visibility="gone" android:background="@drawable/button_bar_background" android:layout_alignParentTop="true"/>
+        <com.resto.models.FooterButton android:id="@+id/menu_more_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="more" android:drawableRight="@android:drawable/arrow_up_float" android:visibility="gone" android:background="@drawable/button_bar_background"/>
     </RelativeLayout>
     <ListView android:id="@+id/menu_list" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@id/footer"/>
 </RelativeLayout>

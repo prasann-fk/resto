@@ -22,6 +22,7 @@ public class MenuItem {
     private String description;
     @DatabaseField(columnDefinition = "LONGBLOB not null", dataType = DataType.BYTE_ARRAY)
     public byte[] image_bytes;
+
     private String image;
 	@DatabaseField(canBeNull = true, dataType = DataType.LONG_STRING)
     private String tags;
@@ -102,7 +103,6 @@ public class MenuItem {
 		sb.append(", ").append("name=").append(name);
 		sb.append(", ").append("description=").append(description);
 		sb.append(", ").append("tags=").append(tags);
-        sb.append(", ").append("restaurant=").append(restaurant.toString());
 		return sb.toString();
 	}
 }
